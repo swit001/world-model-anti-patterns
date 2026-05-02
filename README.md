@@ -60,6 +60,7 @@ ESTC is not a framework. It is a design vocabulary. You can implement it in code
 Each anti-pattern is a boundary violation. ESTC makes those boundaries explicit:
 
 ```text
+Payload ≠ Entity
 Belief ≠ State
 Action ≠ Transition
 Prompt ≠ Constraint
