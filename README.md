@@ -68,8 +68,6 @@ Text ≠ Verdict
 Tool call ≠ Commit
 ```
 
-ESTC makes those boundaries explicit.
-
 ---
 
 ## How to read this repo
