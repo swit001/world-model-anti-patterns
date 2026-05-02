@@ -1,0 +1,62 @@
+<svg width="680" height="420" viewBox="0 0 680 420" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', system-ui, -apple-system, sans-serif">
+  <rect width="680" height="420" fill="#FFFFFF"/>
+
+  <text x="180" y="20" text-anchor="middle" font-size="11" fill="#F7694C" font-weight="600" letter-spacing="0.8">WORLDLESS AGENTS</text>
+  <text x="500" y="20" text-anchor="middle" font-size="11" fill="#26C981" font-weight="600" letter-spacing="0.8">ESTC TERM</text>
+
+  <line x1="340" y1="28" x2="340" y2="404" stroke="#1E2549" stroke-width="1" stroke-dasharray="6 4" opacity="0.18"/>
+
+  <!-- Row 1: Payload ≠ Entity -->
+  <rect x="40" y="32" width="220" height="48" rx="8" fill="#FFF0EC" stroke="#F7694C" stroke-width="1"/>
+  <text x="150" y="47" text-anchor="middle" font-size="14" font-weight="600" fill="#161D30" dominant-baseline="central">Payload</text>
+  <text x="150" y="65" text-anchor="middle" font-size="12" fill="#C44530" dominant-baseline="central">Untyped data object</text>
+  <text x="340" y="60" text-anchor="middle" font-size="22" fill="#1E2549" dominant-baseline="central">≠</text>
+  <rect x="420" y="32" width="220" height="48" rx="8" fill="#E8FAF2" stroke="#26C981" stroke-width="1"/>
+  <text x="530" y="47" text-anchor="middle" font-size="14" font-weight="600" fill="#161D30" dominant-baseline="central">Entity</text>
+  <text x="530" y="65" text-anchor="middle" font-size="12" fill="#1A7A4A" dominant-baseline="central">Typed executable object</text>
+
+  <!-- Row 2: Belief ≠ State -->
+  <rect x="40" y="96" width="220" height="48" rx="8" fill="#FFF0EC" stroke="#F7694C" stroke-width="1"/>
+  <text x="150" y="111" text-anchor="middle" font-size="14" font-weight="600" fill="#161D30" dominant-baseline="central">Belief</text>
+  <text x="150" y="129" text-anchor="middle" font-size="12" fill="#C44530" dominant-baseline="central">LLM's estimated view</text>
+  <text x="340" y="124" text-anchor="middle" font-size="22" fill="#1E2549" dominant-baseline="central">≠</text>
+  <rect x="420" y="96" width="220" height="48" rx="8" fill="#E8FAF2" stroke="#26C981" stroke-width="1"/>
+  <text x="530" y="111" text-anchor="middle" font-size="14" font-weight="600" fill="#161D30" dominant-baseline="central">State</text>
+  <text x="530" y="129" text-anchor="middle" font-size="12" fill="#1A7A4A" dominant-baseline="central">SSOT committed coordinate</text>
+
+  <!-- Row 3: Action ≠ Transition -->
+  <rect x="40" y="160" width="220" height="48" rx="8" fill="#FFF0EC" stroke="#F7694C" stroke-width="1"/>
+  <text x="150" y="175" text-anchor="middle" font-size="14" font-weight="600" fill="#161D30" dominant-baseline="central">Action</text>
+  <text x="150" y="193" text-anchor="middle" font-size="12" fill="#C44530" dominant-baseline="central">Function called directly</text>
+  <text x="340" y="188" text-anchor="middle" font-size="22" fill="#1E2549" dominant-baseline="central">≠</text>
+  <rect x="420" y="160" width="220" height="48" rx="8" fill="#E8FAF2" stroke="#26C981" stroke-width="1"/>
+  <text x="530" y="175" text-anchor="middle" font-size="14" font-weight="600" fill="#161D30" dominant-baseline="central">Transition</text>
+  <text x="530" y="193" text-anchor="middle" font-size="12" fill="#1A7A4A" dominant-baseline="central">Declared state path</text>
+
+  <!-- Row 4: Prompt ≠ Constraint -->
+  <rect x="40" y="224" width="220" height="48" rx="8" fill="#FFF0EC" stroke="#F7694C" stroke-width="1"/>
+  <text x="150" y="239" text-anchor="middle" font-size="14" font-weight="600" fill="#161D30" dominant-baseline="central">Prompt</text>
+  <text x="150" y="257" text-anchor="middle" font-size="12" fill="#C44530" dominant-baseline="central">Natural language rule</text>
+  <text x="340" y="252" text-anchor="middle" font-size="22" fill="#1E2549" dominant-baseline="central">≠</text>
+  <rect x="420" y="224" width="220" height="48" rx="8" fill="#E8FAF2" stroke="#26C981" stroke-width="1"/>
+  <text x="530" y="239" text-anchor="middle" font-size="14" font-weight="600" fill="#161D30" dominant-baseline="central">Constraint</text>
+  <text x="530" y="257" text-anchor="middle" font-size="12" fill="#1A7A4A" dominant-baseline="central">Executable predicate</text>
+
+  <!-- Row 5: Text ≠ Verdict -->
+  <rect x="40" y="288" width="220" height="48" rx="8" fill="#FFF0EC" stroke="#F7694C" stroke-width="1"/>
+  <text x="150" y="303" text-anchor="middle" font-size="14" font-weight="600" fill="#161D30" dominant-baseline="central">Text</text>
+  <text x="150" y="321" text-anchor="middle" font-size="12" fill="#C44530" dominant-baseline="central">Free-form prose response</text>
+  <text x="340" y="316" text-anchor="middle" font-size="22" fill="#1E2549" dominant-baseline="central">≠</text>
+  <rect x="420" y="288" width="220" height="48" rx="8" fill="#E8FAF2" stroke="#26C981" stroke-width="1"/>
+  <text x="530" y="303" text-anchor="middle" font-size="14" font-weight="600" fill="#161D30" dominant-baseline="central">Verdict</text>
+  <text x="530" y="321" text-anchor="middle" font-size="12" fill="#1A7A4A" dominant-baseline="central">ALLOW / DENY / ESCALATE</text>
+
+  <!-- Row 6: Tool call ≠ Commit -->
+  <rect x="40" y="352" width="220" height="48" rx="8" fill="#FFF0EC" stroke="#F7694C" stroke-width="1"/>
+  <text x="150" y="367" text-anchor="middle" font-size="14" font-weight="600" fill="#161D30" dominant-baseline="central">Tool call</text>
+  <text x="150" y="385" text-anchor="middle" font-size="12" fill="#C44530" dominant-baseline="central">Unvalidated execution</text>
+  <text x="340" y="380" text-anchor="middle" font-size="22" fill="#1E2549" dominant-baseline="central">≠</text>
+  <rect x="420" y="352" width="220" height="48" rx="8" fill="#E8FAF2" stroke="#26C981" stroke-width="1"/>
+  <text x="530" y="367" text-anchor="middle" font-size="14" font-weight="600" fill="#161D30" dominant-baseline="central">Commit</text>
+  <text x="530" y="385" text-anchor="middle" font-size="12" fill="#1A7A4A" dominant-baseline="central">Guard-passed state write</text>
+</svg>

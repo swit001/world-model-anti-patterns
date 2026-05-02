@@ -41,6 +41,8 @@ ESTC is not a framework. It is a design vocabulary. You can implement it in code
 
 ## Anti-pattern catalog
 
+![Anti-pattern catalog overview](assets/antipattern-catalog.svg)
+
 | # | Anti-pattern | Bad smell |
 |---|---|---|
 | [01](anti-patterns/01-state-as-text.md) | State as Text | "The order seems delivered…" |
@@ -52,6 +54,8 @@ ESTC is not a framework. It is a design vocabulary. You can implement it in code
 ---
 
 ## The pattern behind the anti-patterns
+
+![Pattern boundaries](assets/pattern-boundaries.svg)
 
 Most failures come from the same missing boundaries:
 
