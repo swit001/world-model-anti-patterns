@@ -64,3 +64,8 @@ The calling system receives a structured object. It knows the decision, the reas
 ## Takeaway
 
 If your agent's answer can't be parsed by a switch statement, it's not a verdict — it's a guess.
+
+## Examples
+
+- Bad: [examples/bad/no-verdict-contract.md](../examples/bad/no-verdict-contract.md)
+- Good: [examples/good/verdict-contract.json](../examples/good/verdict-contract.json)

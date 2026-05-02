@@ -1,0 +1,9 @@
+{
+  "belief_state": "Delivered",
+  "committed_state": "Shipped",
+  "proposed_transition": "RequestRefund",
+  "verdict": "DENY",
+  "reason": "Transition requires committed state Delivered. Committed state is Shipped.",
+  "next_committed_state": "Shipped",
+  "swm_note": "Belief state was inferred from customer message. Committed state was read from order-service at decision time. SWM overrides NWM."
+}

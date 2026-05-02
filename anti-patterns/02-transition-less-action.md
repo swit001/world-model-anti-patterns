@@ -89,3 +89,8 @@ The agent is only offered `RequestRefund` if the order is currently in state `DE
 ## Takeaway
 
 An action without a declared transition is a footgun with no safety.
+
+## Examples
+
+- Bad: [examples/bad/transition-less-action.md](../examples/bad/transition-less-action.md)
+- Good: [examples/good/transition-defined-action.yaml](../examples/good/transition-defined-action.yaml)

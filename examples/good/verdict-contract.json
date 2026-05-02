@@ -1,0 +1,11 @@
+{
+  "verdict": "DENY",
+  "entity": "Order",
+  "attempted_transition": "RequestRefund",
+  "current_state": "Delivered",
+  "next_state": null,
+  "failed_guards": [
+    "refund_window"
+  ],
+  "audit_ref": "audit_20260502_091400_ord8821"
+}

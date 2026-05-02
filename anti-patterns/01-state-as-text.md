@@ -66,3 +66,8 @@ The agent reads `committed_state.status`, confirms it is `DELIVERED`, and confir
 ## Takeaway
 
 An agent that infers state from text is not reading the world — it is imagining it.
+
+## Examples
+
+- Bad: [examples/bad/state-as-text.md](../examples/bad/state-as-text.md)
+- Good: [examples/good/estc-refund-world.yaml](../examples/good/estc-refund-world.yaml)

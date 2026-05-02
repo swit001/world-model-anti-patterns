@@ -78,3 +78,8 @@ The agent proposed. The SWM verified. The transition was allowed only after comm
 ## Takeaway
 
 The LLM can propose. Only the system of record can commit.
+
+## Examples
+
+- Bad: [examples/bad/belief-commit-confusion.md](../examples/bad/belief-commit-confusion.md)
+- Good: [examples/good/belief-vs-committed.json](../examples/good/belief-vs-committed.json)

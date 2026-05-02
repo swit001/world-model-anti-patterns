@@ -1,0 +1,39 @@
+entity: Order
+
+states:
+  - PENDING
+  - PROCESSING
+  - SHIPPED
+  - DELIVERED
+  - REFUND_REQUESTED
+  - REFUNDED
+  - CANCELLED
+
+transitions:
+  - name: RequestRefund
+    from: DELIVERED
+    to: REFUND_REQUESTED
+    guards:
+      - refund_window_days: "<= 7"
+      - item_refundable: "== true"
+
+  - name: ApproveRefund
+    from: REFUND_REQUESTED
+    to: REFUNDED
+    guards:
+      - amount_within_auto_approve_limit: "order.total <= 500"
+
+  - name: EscalateRefund
+    from: REFUND_REQUESTED
+    to: REFUND_REQUESTED
+    guards:
+      - amount_exceeds_auto_approve_limit: "order.total > 500"
+    escalation_target: finance_team
+
+  - name: CancelOrder
+    from:
+      - PENDING
+      - PROCESSING
+    to: CANCELLED
+    guards:
+      - payment_not_captured: "order.payment_status != CAPTURED"

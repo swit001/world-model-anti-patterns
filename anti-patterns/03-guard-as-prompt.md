@@ -71,3 +71,8 @@ Each guard is a named, executable predicate with a clear failure message. The LL
 ## Takeaway
 
 A constraint written in a prompt is a preference. A constraint written in code is a rule.
+
+## Examples
+
+- Bad: [examples/bad/guard-as-prompt.md](../examples/bad/guard-as-prompt.md)
+- Good: [examples/good/estc-refund-world.yaml](../examples/good/estc-refund-world.yaml)

@@ -6,6 +6,9 @@
 
 > Most production agent failures are not reasoning failures. They are world-model failures.
 
+> The agent did exactly what it was told.
+> The problem was that no one defined the world it was operating in.
+
 Agents hallucinate states, skip constraints, confuse belief with committed facts, and return free-form results instead of executable verdicts. This repo catalogs the most common world-model anti-patterns and shows how to fix them.
 
 ---
@@ -38,13 +41,29 @@ ESTC is not a framework. It is a design vocabulary. You can implement it in code
 
 ## Anti-pattern catalog
 
-| # | Name | Core failure |
+| # | Anti-pattern | Bad smell |
 |---|---|---|
-| [01](anti-patterns/01-state-as-text.md) | State as Text | State lives in a prompt instead of committed system state |
-| [02](anti-patterns/02-transition-less-action.md) | Transition-less Action | Actions fire without declared source/target states |
-| [03](anti-patterns/03-guard-as-prompt.md) | Guard as Prompt | Constraints are written as instructions, not executable checks |
-| [04](anti-patterns/04-belief-commit-confusion.md) | Belief-Commit Confusion | LLM-estimated state is treated as authoritative fact |
-| [05](anti-patterns/05-no-verdict-contract.md) | No Verdict Contract | Agent returns prose instead of a structured outcome |
+| [01](anti-patterns/01-state-as-text.md) | State as Text | "The order seems delivered…" |
+| [02](anti-patterns/02-transition-less-action.md) | Transition-less Action | `refundPayment()` without `Delivered -> RefundRequested` |
+| [03](anti-patterns/03-guard-as-prompt.md) | Guard as Prompt | "Never refund after 7 days" buried in a system prompt |
+| [04](anti-patterns/04-belief-commit-confusion.md) | Belief-Commit Confusion | LLM belief treated as SSOT |
+| [05](anti-patterns/05-no-verdict-contract.md) | No Verdict Contract | Agent returns "Done" instead of ALLOW / DENY / ESCALATE |
+
+---
+
+## The pattern behind the anti-patterns
+
+Most failures come from the same missing boundaries:
+
+```text
+Belief ≠ State
+Action ≠ Transition
+Prompt ≠ Constraint
+Text ≠ Verdict
+Tool call ≠ Commit
+```
+
+ESTC makes those boundaries explicit.
 
 ---
 
