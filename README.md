@@ -57,7 +57,7 @@ ESTC is not a framework. It is a design vocabulary. You can implement it in code
 
 ![Pattern boundaries](assets/pattern-boundaries.svg)
 
-Most failures come from the same missing boundaries:
+Each anti-pattern is a boundary violation. ESTC makes those boundaries explicit:
 
 ```text
 Belief ≠ State
