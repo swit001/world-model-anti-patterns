@@ -80,13 +80,17 @@ You don't need to read in order. Jump to whichever anti-pattern matches a failur
 
 ---
 
-## Related projects
-- [World Debt Detector](https://github.com/swit001/world-debt-detector) — scan prompts, tools, configs, and workflows for world-model debt
+## From Anti-Patterns to Detection
 
-- [Agentic World Model](https://github.com/swit001/agentic-world-model) — a reference architecture for world-model-aware agents
-- [ESTC World Model Runtime](https://github.com/swit001/estc-world-model) — a runtime that enforces ESTC contracts at execution time
+This catalog names the failure modes.  
+[World Debt Detector](https://github.com/swit001/world-debt-detector) scans prompts, tools, configs, and workflows to detect those patterns automatically.
 
----
+## World Model Ecosystem
+
+- [Agentic World Model](https://github.com/swit001/agentic-world-model) — map: executable world specification toolkit
+- [ESTC World Model Runtime](https://github.com/swit001/estc-world-model) — engine: Python runtime and schema export
+- [World Model Anti-Patterns](https://github.com/swit001/world-model-anti-patterns) — why it matters: failure catalog
+- [World Debt Detector](https://github.com/swit001/world-debt-detector) — measure it: CLI scanner for implicit world-model debt
 
 ## License
 
