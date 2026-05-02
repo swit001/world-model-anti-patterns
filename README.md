@@ -81,6 +81,7 @@ You don't need to read in order. Jump to whichever anti-pattern matches a failur
 ---
 
 ## Related projects
+- [World Debt Detector](https://github.com/swit001/world-debt-detector) — scan prompts, tools, configs, and workflows for world-model debt
 
 - [Agentic World Model](https://github.com/swit001/agentic-world-model) — a reference architecture for world-model-aware agents
 - [ESTC World Model Runtime](https://github.com/swit001/estc-world-model) — a runtime that enforces ESTC contracts at execution time
