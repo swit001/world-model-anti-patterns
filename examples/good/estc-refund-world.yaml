@@ -1,0 +1,98 @@
+entity:
+  name: Order
+  description: A customer purchase order tracked through fulfillment and post-delivery lifecycle
+
+  states:
+    - name: PENDING
+      description: Order placed, payment not yet captured
+    - name: PROCESSING
+      description: Payment captured, order being prepared
+    - name: SHIPPED
+      description: Order handed to carrier
+    - name: DELIVERED
+      description: Carrier confirmed delivery to customer
+    - name: REFUND_REQUESTED
+      description: Customer has submitted a refund request, pending review
+    - name: REFUNDED
+      description: Refund approved and payment reversed
+    - name: CANCELLED
+      description: Order cancelled before fulfillment
+    - name: CLOSED
+      description: Order completed with no open actions
+
+  transitions:
+    - name: RequestRefund
+      from: DELIVERED
+      to: REFUND_REQUESTED
+      description: Customer submits a refund request for a delivered order
+      guards:
+        - refund_window_open
+        - item_is_refundable
+        - no_existing_refund
+
+    - name: ApproveRefund
+      from: REFUND_REQUESTED
+      to: REFUNDED
+      description: Refund request passes all checks and is approved
+      guards:
+        - amount_within_auto_approve_limit
+
+    - name: EscalateRefund
+      from: REFUND_REQUESTED
+      to: REFUND_REQUESTED
+      description: Refund amount exceeds auto-approve threshold; routed to finance team
+      guards:
+        - amount_exceeds_auto_approve_limit
+
+    - name: DenyRefund
+      from: REFUND_REQUESTED
+      to: CLOSED
+      description: Refund request rejected; order closed
+      guards: []
+
+    - name: CancelOrder
+      from:
+        - PENDING
+        - PROCESSING
+      to: CANCELLED
+      description: Order cancelled before fulfillment
+      guards:
+        - payment_not_captured
+
+  constraints:
+    refund_window_open:
+      type: temporal
+      rule: "order.delivered_at + 7d >= now()"
+      error: "Refund window has expired"
+      on_fail: DENY
+
+    item_is_refundable:
+      type: attribute
+      rule: "order.item.refundable == true"
+      error: "Item is marked non-refundable (Final Sale)"
+      on_fail: DENY
+
+    no_existing_refund:
+      type: state
+      rule: "order.refund_status == null"
+      error: "A refund has already been issued or is in progress for this order"
+      on_fail: DENY
+
+    amount_within_auto_approve_limit:
+      type: numeric
+      rule: "order.total <= 500"
+      error: "Amount is within auto-approve limit"
+      on_fail: DENY
+
+    amount_exceeds_auto_approve_limit:
+      type: numeric
+      rule: "order.total > 500"
+      error: "Amount exceeds auto-approve threshold; manual review required"
+      on_fail: DENY
+      escalation_target: finance_team
+
+    payment_not_captured:
+      type: state
+      rule: "order.payment_status != CAPTURED"
+      error: "Payment already captured; cancellation requires refund flow"
+      on_fail: DENY

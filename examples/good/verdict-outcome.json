@@ -1,0 +1,39 @@
+{
+  "verdict": "DENY",
+  "entity": "Order",
+  "entity_id": "ord-8821",
+  "attempted_transition": "RequestRefund",
+  "current_state": "DELIVERED",
+  "next_state": null,
+  "failed_guard": "refund_window_open",
+  "reason": "Refund window expired. Order delivered 2026-04-20. Window closed 2026-04-27. Request received 2026-05-02.",
+  "guards_evaluated": [
+    {
+      "name": "refund_window_open",
+      "result": "FAIL",
+      "detail": "12 days since delivery; window is 7 days"
+    },
+    {
+      "name": "item_is_refundable",
+      "result": "NOT_EVALUATED",
+      "detail": "Evaluation halted after first guard failure"
+    },
+    {
+      "name": "no_existing_refund",
+      "result": "NOT_EVALUATED",
+      "detail": "Evaluation halted after first guard failure"
+    }
+  ],
+  "escalation_path": null,
+  "agent_proposal": {
+    "basis": "Customer reports item arrived defective",
+    "proposed_action": "RequestRefund",
+    "confidence": "high"
+  },
+  "swm_adjudication": {
+    "committed_state_read_at": "2026-05-02T09:14:00Z",
+    "source": "order-service/v1/orders/ord-8821",
+    "overrides_agent_proposal": true
+  },
+  "timestamp": "2026-05-02T09:14:00Z"
+}
